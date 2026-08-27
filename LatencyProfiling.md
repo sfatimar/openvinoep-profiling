@@ -16,6 +16,16 @@ sess_options.enable_profiling = True
 Please find the usage instructions using onnxruntime_perf_test.exe -h. Profiling can be enabled through -p option
 The [perf_view tool](https://github.com/microsoft/onnxruntime/tree/main/tools/perf_view) can also be used to render the statistics as a summarized view in the browser.
 
+The JSON file which contains the detailed performance data (latency of each operator, etc). 
+This file is a standard performance tracing file, and to view it in a user-friendly way, you can open it by using multiple tools.
+
+(Windows) Use the WPA GUI to open the trace using the Perfetto OSS plugin - Microsoft-Performance-Tools-Linux-Android
+Perfetto UI - Successor to Chrome Tracing UI
+chrome://tracing:
+Open a Chromium based browser such as Edge or Chrome
+Type chrome://tracing in the address bar
+Load the generated JSON file
+
 ```bash
 onnxruntime_perf_test.exe \
   --plugin_ep_libs "OpenVINOExecutionProvider|onnxruntime_providers_openvino_plugin.dll" \
